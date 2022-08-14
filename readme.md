@@ -44,3 +44,7 @@ npm run start
 ### Step 5: Visit the URL
 
 Navigate to http://localhost:3000 for start of the API 
+
+
+## Live demo:
+[Live demo](https://mayank-dairy-distributor-api.herokuapp.com/)

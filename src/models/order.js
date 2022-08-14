@@ -25,7 +25,7 @@ const orderSchema = new mongoose.Schema({
     deliveryDate: {
         type: String,
         trim: true,
-        default: dayjs().format('DD-MM-YYYY'),
+        default: dayjs().format('MM-DD-YYYY'),
     }
 }, {
     timestamps: true
@@ -56,7 +56,7 @@ orderSchema.pre('save', async function(next) {
 orderSchema.pre('save', async function(next) {
     const order = this
     if(order.deliveryDate) {
-        order.deliveryDate = dayjs(order.deliveryDate).format('DD-MM-YYYY');
+        order.deliveryDate = dayjs(order.deliveryDate).format('MM-DD-YYYY');
     }
 
     if(order.deliveryDate == 'Invalid Date') {
@@ -66,6 +66,6 @@ orderSchema.pre('save', async function(next) {
     next()
 })
 
-const Order = mongoose.model('Task', orderSchema)
+const Order = mongoose.model('Order', orderSchema)
 
 module.exports = Order;
